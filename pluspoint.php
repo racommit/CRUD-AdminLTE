@@ -193,7 +193,7 @@ include("sidebar.php");
                                 >
                                     <div class="fa fa-edit"></div> Edit
                                 </a>
-                                <a href="hapus.php?id=' . $row['id'] . '" class="btn btn-danger btn-xs"  data-toggle="modal" data-target="#modal-danger"> 
+                                <a href="" class="btn btn-danger btn-xs"  data-toggle="modal" data-target="#modal-danger" onclick="hapus(' . $row['id'] . ', true)"> 
                                     <div class="fa fa-trash"></div> Delete 
                                 </a>
                             </td>
@@ -299,8 +299,11 @@ include("sidebar.php");
               <p>Seluruh data yang terdapat di baris tabel akan ikut terhapus juga!</p>
             </div>
             <div class="modal-footer justify-content-between">
-              <button type="button" class="btn btn-outline-light" data-dismiss="modal" onclick="return false;">Close</button>
-              <button type="button" class="btn btn-outline-light" onclick="return true;">Hapus</button>
+              <form action="hapus.php" method="get">
+              <input type="hidden" name="id_to_delete" id="id3">
+              <button type="button" class="btn btn-outline-light" data-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-outline-light" name="yakin">Hapus</button>
+              </form>
             </div>
           </div>
           <!-- /.modal-content -->
@@ -338,7 +341,19 @@ include("sidebar.php");
     <!-- /.control-sidebar -->
   </div>
   <!-- ./wrapper -->
+  <script>
+    function hapus(id, hasil){
+      if(hasil == true){
+        document.getElementById('id3').value = id;
+        $('#modal-danger').modal('hide');
+        return true;
 
+      }else{
+        return false;
+      }
+    }
+
+  </script>
   <!-- jQuery -->
   <script src="plugins/jquery/jquery.min.js"></script>
   <!-- jQuery UI 1.11.4 -->
