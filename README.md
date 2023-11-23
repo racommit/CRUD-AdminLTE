@@ -38,7 +38,10 @@ Jelaskan fitur-fitur utama proyek Anda di sini.
 
 (Ikuti langkah dibawah ini untuk menghindari kegagalan, beberapa db_name dan table mungkin berbeda pada suatu keadaan)
 ```bash
-1. Buat database dengan mengimport dari mysql yang ada di github ini
-2. Sesuaikan koneksi dengan database pada file koneksi
-3. Berikan Registrasi pertama untuk menghindari kegagalan login
+1. File belum termasuk dist, plugins, build
+2. kunjungi halaman resmi adminlte.io untuk mengunduhnya
+3. Jika sudah ada, buat database dengan mengimport dari mysql yang ada di github ini
+4. Sesuaikan koneksi dengan database pada file koneksi
+5. Berikan Registrasi pertama untuk menghindari kegagalan login
+6. Aplikasi kini dapat digunakan
 
