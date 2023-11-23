@@ -13,8 +13,7 @@ Proyek ini memanfaatkan template Admin LTE, yang merupakan sebuah antarmuka peng
 - [Fitur](#fitur)
 - [Instalasi](#instalasi)
 - [Penggunaan](#penggunaan)
-- [Kontribusi](#kontribusi)
-- [Lisensi](#lisensi)
+
 
 ## Demo
 
