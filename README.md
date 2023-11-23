@@ -27,7 +27,7 @@ Proyek ini memanfaatkan template Admin LTE, yang merupakan sebuah antarmuka peng
 
 ## Fitur
 
-Jelaskan fitur-fitur utama proyek Anda di sini.
+Fitur yang tersedia:
 
 - Security login of user
 - CRUD Application
