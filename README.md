@@ -1,9 +1,9 @@
 # CRUD - AdminLTE
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![GitHub stars](https://img.shields.io/github/stars/username/repo.svg)](https://github.com/username/repo/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/username/repo.svg)](https://github.com/username/repo/network)
-[![GitHub issues](https://img.shields.io/github/issues/username/repo.svg)](https://github.com/username/repo/issues)
+[![GitHub stars](https://img.shields.io/github/stars/username/repo.svg)](https://github.com/racommit/CRUD-AdminLTE/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/username/repo.svg)](https://github.com/racommit/CRUD-AdminLTE/network)
+[![GitHub issues](https://img.shields.io/github/issues/username/repo.svg)](https://github.com/racommit/CRUD-AdminLTE/issues)
 
 Proyek ini memanfaatkan template Admin LTE, yang merupakan sebuah antarmuka pengguna berbasis Bootstrap untuk panel administratif. Fokus utama dari proyek ini adalah untuk memberikan solusi CRUD (Create, Read, Update, Delete) untuk poin mahasiswa. Dengan menggunakan antarmuka yang responsif dan estetis dari Admin LTE, proyek ini memudahkan pengelolaan dan manipulasi data poin mahasiswa.
 
