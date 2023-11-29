@@ -14,6 +14,7 @@ if (!empty($_POST)){
         if($pass==$row['password']){
             $_SESSION['username'] = $username;
             $_SESSION['nama'] = $row['nama'];
+            $_SESSION['gambar'] = $row['gambar'];
             $_SESSION['login'] = true;
             echo("<script> window.location.href = 'dashboard.php'; </script>");
         } else {

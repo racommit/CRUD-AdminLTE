@@ -3,13 +3,21 @@ require("koneksi.php");
 
 if (!empty($_POST))
 {
+ 
 $nama = $_POST['nama'];
 $username = $_POST['username'];
 $email = $_POST['email'];
 $hp = $_POST['hp'];
 $password = $_POST['pass'];
+$gambar = upload();
 
-$sql = mysqli_query ($koneksi,"INSERT INTO tb_user (nama, username, password, no_hp, email) VALUES ('".$nama."','".$username."','".$password."','".$hp."','".$email."')");
+// cek apakah gambar berhasil atau tidak
+if(!$gambar){
+  echo "<script>alert('data gagal ditambah yang disebabkan oleh gambar')</script>";
+  return false;
+}
+
+$sql = mysqli_query ($koneksi,"INSERT INTO tb_user (nama, username, password, no_hp, email, gambar) VALUES ('".$nama."','".$username."','".$password."','".$hp."','".$email."','".$gambar."')");
 
 if (!$sql) 
  {
@@ -20,6 +28,39 @@ else {
 }
 
 }
+
+function upload(){
+  $name = $_FILES['gambar']['name'];
+  $tmpName = $_FILES['gambar']['tmp_name'];
+  $error = $_FILES['gambar']['error'];
+  $size = $_FILES['gambar']['size'];
+
+  if($error == 4){
+    echo("<script>alert('Gambar belum ditambahkan')</script>");
+    return false;
+  }
+
+  $ekstensiValid = ['jpg','jpeg','png'];
+  $ekstensiFile = explode('.',$name);
+  $ekstensiFile = strtolower(end($ekstensiFile));
+
+  if(!in_array($ekstensiFile,$ekstensiValid)){
+    echo("<script>alert('Yang anda upload bukan gambar')</script>");
+    return false;
+  }
+
+
+  if($size > 2000000){
+    echo("<script>alert('Ukuran gambar terlalu besar')</script>");
+    return false;
+  }
+  $namaFileBaru = uniqid();
+  $namaFileBaru .= ".";
+  $namaFileBaru .= $ekstensiFile;
+  move_uploaded_file($tmpName, 'img/'. $namaFileBaru);
+  return $namaFileBaru;
+}
+
 ?>
 
 
@@ -49,7 +90,7 @@ else {
     <div class="card-body register-card-body">
       <p class="login-box-msg">Register a new membership</p>
 
-      <form method="post">
+      <form method="post" enctype="multipart/form-data">
         <div class="input-group mb-3">
           <input type="text" class="form-control" placeholder="Nama Lengkap" name="nama">
           <div class="input-group-append">
@@ -79,6 +120,14 @@ else {
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-envelope"></span>
+            </div>
+          </div>
+        </div>
+        <div class="input-group mb-3">
+          <input type="file" class="form-control" placeholder="Gambar" name="gambar">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-file"></span>
             </div>
           </div>
         </div>

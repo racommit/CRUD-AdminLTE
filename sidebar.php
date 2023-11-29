@@ -1,6 +1,7 @@
   <?php
     // session_start();
     $nama = $_SESSION['nama'];
+    $gambar = $_SESSION['gambar'];
   ?>
   <!-- Navbar -->
   <nav class="main-header navbar navbar-expand navbar-white navbar-light">
@@ -152,8 +153,8 @@
     <div class="sidebar">
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-        <div class="image">
-          <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+        <div class="image" style="border-radius:50%;overflow: hidden;width: 40px;height: 40px;" >
+          <img src="img/<?php echo($gambar) ?>"  alt="User Image" style="width: 100%;height:100%;">
         </div>
         <div class="info">
           <a href="#" class="d-block"> <?php  echo($nama)  ?>   </a>
